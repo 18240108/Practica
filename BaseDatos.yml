@@ -1,0 +1,12 @@
+
+---
+- hosts: all
+  become: true
+  
+  tasks:
+    - name: create a new database
+      mysql_db: name=fruits state=present login_user=root login_password="1234"
+    - name: add sample data to database
+      copy: src=web/fruits.sql dest=/tmp/fruits.sql
+    - name: insert sample data into database
+      mysql_db: name=fruits state=import target=/tmp/fruits.sql login_password="1234"

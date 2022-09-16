@@ -1,0 +1,7 @@
+---
+mysql_root_password: "1234"
+app_user: "karen"
+http_host: "www.knavarro.com"
+http_conf: "www.knavarro.com.conf"
+http_port: "80"
+disable_default: true
